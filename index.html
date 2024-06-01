@@ -1,62 +1,98 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contenido Adaptado</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DonCom Installer</title>
+     <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="DonCom Installer">
+    <meta property="og:description" content="DonCom is a comprehensive and secure solution for managing cybercafés, offering session control and comprehensive management.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/mgrl39/mgrl39.github.io/main/Logos/LogoEnBlanco.png">
+    <meta property="og:url" content="https://doncom.me">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DonCom">
+    
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Roboto', sans-serif; /* Font changed to Roboto */
+        color: #333; /* Darker text for contrast */
+        overflow: hidden; /* Hide overflowing animations */
+    }
 
-        #content {
-            width: 80%;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    #container {
+        position: relative;
+        text-align: center;
+        background: #ffffff; /* White background */
+        padding: 40px; /* Increased inner spacing */
+        border-radius: 15px; /* More pronounced rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+        max-width: 600px; /* Maximum container width */
+        margin: auto; /* Horizontally centered */
+    }
 
-        h1, h2, h3, h4, h5, h6 {
-            color: #333;
-        }
+    pre {
+        background: #e5e7eb; /* Light gray background for code block */
+        padding: 20px; /* Increased inner spacing */
+        border-radius: 10px; /* Rounded corners */
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-x: auto; /* Horizontal scrolling if code is too long */
+        margin-top: 20px; /* Space between title and code block */
+        cursor: pointer; /* Cursor change on hover */
+    }
 
-        p {
-            line-height: 1.6;
-            color: #666;
-        }
+    pre:hover {
+        background: #dcdfe4; /* Background color change on hover */
+    }
 
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
+   /* Background animations */
+@keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(-45deg, #ffcc00, #ff6600, #ff0066, #6600ff, #0033cc, #0099ff);
+    background-size: 600% 600%; /* Larger size for smooth animation */
+    animation: animateBackground 20s linear infinite alternate; /* Reverse animation direction when it ends */
+}
+
+    }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('https://doncomproject.github.io/arenita/')
-                .then(response => response.text())
-                .then(markdown => {
-                    const htmlContent = marked(markdown);
-                    document.getElementById('content').innerHTML = htmlContent;
-                })
-                .catch(error => {
-                    console.error('Error fetching the Markdown file:', error);
-                });
-        });
-    </script>
 </head>
 <body>
-    <div id="content"></div>
+    <div id="container">
+        <h1>DonCom Installer</h1>
+        <p>To install, run the following command in your terminal:</p>
+        <pre id="commandBlock">bash -c "$(curl https://doncom.me/install.sh)"</pre>
+    </div>
+
+    <script>
+        document.getElementById('commandBlock').addEventListener('click', function() {
+            navigator.clipboard.writeText(this.textContent).then(function() {
+                alert('Command copied to clipboard!');
+            }).catch(function(error) {
+                console.error('Error copying command:', error);
+                alert('There was a problem copying the command.');
+            });
+        });
+    </script>
 </body>
 </html>
