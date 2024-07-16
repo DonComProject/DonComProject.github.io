@@ -1,0 +1,96 @@
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+ }
+
+
+ h1 {
+    font-size: 35px;
+ }
+ 
+ .services{
+
+
+    background-color: #051722;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+   
+ }
+ .services .service-item {
+    background: url('https://media-public.canva.com/yXJcY/MAFK23yXJcY/1/s2.png');
+    padding: 20px;
+    margin: 50px;
+    border: 8px solid #000000;
+    display: inline-block;
+    width: 30%;
+    box-shadow: 0 0 100px rgba(0,0,0,100);
+    color: white;
+    transition: border 0.7s ease;
+   
+ }
+ .services .service-item:hover {
+    border: 8px solid white;
+ }
+ .service-link {
+    text-decoration: none;
+}
+.service-title {
+    background: url('https://media-public.canva.com/yXJcY/MAFK23yXJcY/1/s2.png');
+    color: white;
+    display: inline-block;
+    padding: 25px 50px;
+    border-radius: 10px;
+    margin: 0;
+}
+.features-list {
+    list-style: none; 
+    padding: 0; 
+    margin-top: 30px; 
+}
+
+
+.features-list li {
+    margin: 10px 0; 
+    font-size: 16px; 
+}
+
+.download-main {
+    padding: 10px 20px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    transition: border 0.2s ease;
+}
+.download-main:hover{
+    background-color: white;
+    color: #051722;
+}
+
+.download-client{
+    padding: 10px 20px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    transition: border 0.2s ease;
+}
+.download-client:hover{
+    background-color: white;
+    color: #051722;
+}
+
+ footer {
+    background: #333;
+    color: #ffff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+   
+ }
